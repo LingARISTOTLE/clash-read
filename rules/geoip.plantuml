@@ -1,0 +1,44 @@
+@startuml
+title Clash 数据流向
+
+folder "客户端" {
+    rectangle "浏览器/应用" as client
+}
+
+folder "Clash进程" {
+    rectangle "Proxy模块" as proxy #LightBlue
+    rectangle "Tunnel模块" as tunnel #LightGreen
+    rectangle "Rules模块" as rules #LightYellow
+    rectangle "Adapters模块" as adapters #LightPink
+    
+    database "配置文件" as config
+}
+
+folder "外部" {
+    rectangle "代理服务器" as proxy_server
+    rectangle "目标服务器" as target_server
+}
+
+client --> proxy : 网络请求
+proxy --> tunnel : 连接请求队列
+tunnel --> config : 读取配置
+tunnel --> rules : 规则匹配
+rules --> tunnel : 匹配结果
+tunnel --> adapters : 代理生成
+adapters --> proxy_server : 代理连接
+proxy_server --> target_server : 转发请求
+target_server --> proxy_server : 响应数据
+proxy_server --> adapters : 返回数据
+adapters --> tunnel : 数据传输
+tunnel --> proxy : 返回数据
+proxy --> client : 响应客户端
+
+note top of tunnel
+  Tunnel是核心调度器，协调各组件工作
+end note
+
+note top of adapters
+  Adapters实现适配器模式，统一不同代理接口
+end note
+
+@enduml

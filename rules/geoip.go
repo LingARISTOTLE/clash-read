@@ -1,6 +1,10 @@
 package rules
 
 import (
+	"net/netip"
+
+	"github.com/oschwald/geoip2-golang"
+
 	C "github.com/fossabot/clash/constant"
 
 	log "github.com/sirupsen/logrus"
@@ -29,8 +33,14 @@ func (g *GEOIP) IsMatch(addr *C.Addr) bool {
 	if addr.IP == nil {
 		return false
 	}
-	record, _ := mmdb.Country(*addr.IP)
-	return record.Country.IsoCode == g.country
+
+	ip, ok := netip.AddrFromSlice(*addr.IP)
+	if !ok {
+		return false
+	}
+
+	record, _ := mmdb.Country(ip)
+	return record.Country.ISOCode == g.country
 }
 
 func (g *GEOIP) Adapter() string {

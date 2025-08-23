@@ -1,7 +1,7 @@
 package rules
 
 import (
-	C "github.com/fossabot/clash/constant"
+	C "../constant"
 )
 
 type Final struct {

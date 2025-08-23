@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	C "github.com/fossabot/clash/constant"
+	C "../constant"
 )
 
 type URLTest struct {

@@ -4,7 +4,7 @@ package adapters
 import (
 	"net"
 
-	C "github.com/fossabot/clash/constant"
+	C "../constant"
 )
 
 // TrafficTrack 是一个流量统计跟踪器

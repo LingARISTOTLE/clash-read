@@ -5,7 +5,7 @@ import (
 	"io"
 	"net"
 
-	C "github.com/fossabot/clash/constant"
+	C "../../constant"
 )
 
 type HttpsAdapter struct {

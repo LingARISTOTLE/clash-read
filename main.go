@@ -5,11 +5,11 @@ import (
 	"os/signal"
 	"syscall"
 
-	C "github.com/fossabot/clash/constant"
-	"github.com/fossabot/clash/hub"
-	"github.com/fossabot/clash/proxy/http"
-	"github.com/fossabot/clash/proxy/socks"
-	"github.com/fossabot/clash/tunnel"
+	C "./constant"
+	"./hub"
+	"./proxy/http"
+	"./proxy/socks"
+	"./tunnel"
 
 	log "github.com/sirupsen/logrus"
 )

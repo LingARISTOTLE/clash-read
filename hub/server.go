@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/fossabot/clash/tunnel"
+	"../tunnel"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/render"

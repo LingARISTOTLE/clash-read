@@ -7,10 +7,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/fossabot/clash/adapters"
-	C "github.com/fossabot/clash/constant"
-	"github.com/fossabot/clash/observable"
-	R "github.com/fossabot/clash/rules"
+	"../adapters"
+	C "../constant"
+	"../observable"
+	R "../rules"
 
 	"gopkg.in/eapache/channels.v1"
 )

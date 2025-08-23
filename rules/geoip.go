@@ -5,7 +5,7 @@ import (
 
 	"github.com/oschwald/geoip2-golang"
 
-	C "github.com/fossabot/clash/constant"
+	C "../constant"
 
 	log "github.com/sirupsen/logrus"
 )

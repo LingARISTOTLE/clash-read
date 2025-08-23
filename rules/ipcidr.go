@@ -3,7 +3,7 @@ package rules
 import (
 	"net"
 
-	C "github.com/fossabot/clash/constant"
+	C "../constant"
 )
 
 type IPCIDR struct {

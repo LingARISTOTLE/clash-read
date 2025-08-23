@@ -4,7 +4,7 @@ import (
 	"io"
 	"net"
 
-	C "github.com/fossabot/clash/constant"
+	C "../constant"
 )
 
 // RejectAdapter is a reject connected adapter

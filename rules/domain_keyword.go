@@ -3,7 +3,7 @@ package rules
 import (
 	"strings"
 
-	C "github.com/fossabot/clash/constant"
+	C "../constant"
 )
 
 type DomainKeyword struct {

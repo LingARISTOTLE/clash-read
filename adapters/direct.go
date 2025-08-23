@@ -5,7 +5,7 @@ import (
 	"io"
 	"net"
 
-	C "github.com/fossabot/clash/constant"
+	C "../constant"
 )
 
 // DirectAdapter 是一个直接连接的适配器
